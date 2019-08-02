@@ -1,16 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { Table } from 'reactstrap';
 
 import User from './User';
 
-export default class UserList extends Component {
-    componentDidMount(){
+export default function UserList(props) {
+    return (
+        <div className="container">
+            <Table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <User users={props.users} />
+            </Table>
+        </div>
 
-    }
-    render(){
-        return(
-            <ul>
-                <User />
-            </ul>
-        )
-    }
+    )
 }
