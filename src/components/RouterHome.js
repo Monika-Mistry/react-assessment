@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import NavBar from './NavBar';
-import UserLogin from './UserLogin';
+import LoginForm from './LoginForm';
+import RegisterForm from './RegisterForm';
 
 export default class RouterHome extends Component {
     render() {
@@ -13,8 +14,8 @@ export default class RouterHome extends Component {
                 <br></br>
 
                 <Route exact path="/" />
-                <Route path="/login" component={UserLogin} />
-                <Route path="/register" />
+                <Route path="/login" component={LoginForm} />
+                <Route path="/register" component={RegisterForm} />
                 <Route path="/users" />
             </Router>
         )
