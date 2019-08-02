@@ -8,6 +8,7 @@ import {
     Button,
     FormFeedback
 } from 'reactstrap';
+import PropTypes from 'prop-types';
 
 export default function LoginForm(props) {
     const isLoggedIn = props.isLoggedIn;
@@ -54,4 +55,18 @@ export default function LoginForm(props) {
             {isLoggedIn && <h1 className="text-center text-success">{user} Logged In</h1>}
         </Form>
     )
+}
+
+LoginForm.propTypes = {
+    isLoggedIn: PropTypes.bool,
+    isPassword: PropTypes.bool,
+    isUser: PropTypes.bool,
+    user: PropTypes.string
+}
+
+LoginForm.defaultProps = {
+    isLoggedIn: false,
+    isPassword: true,
+    isUser: true,
+    user: ""
 }

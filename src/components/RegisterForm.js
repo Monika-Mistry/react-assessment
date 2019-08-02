@@ -8,6 +8,7 @@ import {
     Button,
     FormFeedback
 } from 'reactstrap';
+import PropTypes from 'prop-types'
 
 
 export default function RegisterForm(props) {
@@ -90,4 +91,14 @@ export default function RegisterForm(props) {
             {isAdded && <h1 className="text-center text-success">User Added</h1>}
         </div>
     )
+}
+
+RegisterForm.propTypes = {
+    isAdded: PropTypes.bool,
+    errors: PropTypes.object
+}
+
+RegisterForm.defaultProps = {
+    isAdded: true,
+    errors: {}
 }
