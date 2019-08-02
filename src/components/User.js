@@ -6,7 +6,9 @@ export default function User(props) {
             {
                 props.users.map(element => {
                     return (
-                        <li key={element._id}>{element.username}</li>
+                        <tr key={element._id}>
+                            <td>{element.username}</td>
+                        </tr>
                     )
                 })
             }
