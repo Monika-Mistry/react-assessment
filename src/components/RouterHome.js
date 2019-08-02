@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
+import UserList from './UserList';
 
 export default class RouterHome extends Component {
     render() {
@@ -16,7 +17,7 @@ export default class RouterHome extends Component {
                 <Route exact path="/" />
                 <Route path="/login" component={LoginForm} />
                 <Route path="/register" component={RegisterForm} />
-                <Route path="/users" />
+                <Route path="/users" component={UserList}/>
             </Router>
         )
     }
