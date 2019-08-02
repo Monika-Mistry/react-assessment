@@ -6,8 +6,7 @@ import NavBar from './NavBar';
 import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import UserList from './UserList';
-import { getURL, postURL } from './Constants';
-import { faThList } from '@fortawesome/free-solid-svg-icons';
+import { getURL, postURL, loginURL } from './Constants';
 
 export default class RouterHome extends Component {
     constructor() {
@@ -15,7 +14,10 @@ export default class RouterHome extends Component {
         this.state = {
             users: [],
             postErrors: {},
-            isAdded: false
+            isAdded: false,
+            isLoggedIn: false,
+            user: "",
+            success: true
         }
     }
     componentDidMount() {
@@ -28,7 +30,7 @@ export default class RouterHome extends Component {
                 this.setState({
                     users: response.data
                 })
-            }).catch(err => console.log(err.message));
+            }).catch(err => console.log(err));
 
     }
 
@@ -44,20 +46,46 @@ export default class RouterHome extends Component {
             password2: event.target[3].value
         }
 
-        Axios.post(postURL, user).then(response => {
-            if(response.data._id === undefined){
-                this.setState({
-                    postErrors: response.data
-                })
-            } else {
-                console.log(response.data)
-                this.setState(prevState => ({
-                    postErrors: {},
-                    isAdded: !prevState.isAdded
-                }))
-            }
-        }).catch(err => console.log(err.message));
+        Axios.post(postURL, user)
+            .then(response => {
+                if (response.data.Status === undefined) {
+                    this.setState({
+                        postErrors: response.data
+                    })
+                } else {
+                    this.setState(prevState => ({
+                        postErrors: {},
+                        isAdded: !prevState.isAdded
+                    }))
+                }
+            }).catch(err => console.log(err));
 
+    }
+
+    loginUser = event => {
+        event.preventDefault();
+        const username = event.target[0].value;
+        const password = event.target[1].value;
+        const url = loginURL + "/" + username + "/" + password;
+
+        Axios.get(url)
+            .then(response => {
+                if (response.data.Status.toLowerCase().indexOf("not") === -1) {
+                    this.setState({
+                        isLoggedIn: true,
+                        user: username,
+                        success: true
+                    })
+
+                } else {
+                    this.setState({
+                        isLoggedIn: false,
+                        success: false
+                    })
+                }
+            }).catch(err => {
+            console.log(err)
+            })
     }
 
     render() {
@@ -68,7 +96,7 @@ export default class RouterHome extends Component {
                 <br></br>
 
                 <Route exact path="/" />
-                <Route path="/login" component={LoginForm} />
+                <Route path="/login" render={props => <LoginForm success={this.state.success} isLoggedIn={this.state.isLoggedIn} user={this.state.user} loginUser={this.loginUser} />} />
                 <Route path="/register" render={props => <RegisterForm isAdded={this.state.isAdded} errors={this.state.postErrors} addUser={this.addUser} />} />
                 <Route path="/users" render={props => <UserList getAllUser={this.getAllUser} users={this.state.users} />} />
             </Router>
