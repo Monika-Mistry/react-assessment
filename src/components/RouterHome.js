@@ -21,9 +21,6 @@ export default class RouterHome extends Component {
             isUser: true
         }
     }
-    componentDidMount() {
-        this.getAllUser();
-    }
 
     getAllUser = () => {
         Axios.get(getURL)
@@ -32,7 +29,6 @@ export default class RouterHome extends Component {
                     users: response.data
                 })
             }).catch(err => console.log(err));
-
     }
 
     addUser = event => {

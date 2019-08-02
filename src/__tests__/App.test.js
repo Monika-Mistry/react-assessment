@@ -13,5 +13,5 @@ it('renders without crashing', () => {
 it('renders App', () => {
   const wrapper = mount(<App />);
   const content = <RouterHome />;
-  expect(wrapper.contains(content)).toEqual(true)
+  expect(wrapper.contains(content)).toEqual(true);
 })

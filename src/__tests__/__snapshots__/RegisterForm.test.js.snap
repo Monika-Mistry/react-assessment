@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a register form 1`] = `
+<div>
+  <form
+    className="container"
+  >
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="username"
+      >
+        Username:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required={true}
+          type="text"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="email"
+      >
+        Email:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required={true}
+          type="email"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required={true}
+          type="password"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="password2"
+      >
+        Re-enter Password:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="password2"
+          name="password2"
+          placeholder="Enter your password again"
+          required={true}
+          type="password"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="text-center"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        onClick={[Function]}
+      >
+        Register
+      </button>
+    </div>
+  </form>
+  <br />
+  <h1
+    className="text-center text-success"
+  >
+    User Added
+  </h1>
+</div>
+`;
+
+exports[`renders a successful registration 1`] = `
+<div>
+  <form
+    className="container"
+  >
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="username"
+      >
+        Username:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required={true}
+          type="text"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="email"
+      >
+        Email:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required={true}
+          type="email"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required={true}
+          type="password"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="row form-group"
+    >
+      <label
+        className="col-sm-2 col-form-label"
+        htmlFor="password2"
+      >
+        Re-enter Password:
+      </label>
+      <div
+        className="col-sm-10"
+      >
+        <input
+          className="is-valid form-control"
+          id="password2"
+          name="password2"
+          placeholder="Enter your password again"
+          required={true}
+          type="password"
+        />
+        <div
+          className="invalid-feedback"
+          invalid={true}
+        />
+      </div>
+    </div>
+    <div
+      className="text-center"
+    >
+      <button
+        aria-label={null}
+        className="btn btn-secondary"
+        onClick={[Function]}
+      >
+        Register
+      </button>
+    </div>
+  </form>
+  <br />
+  <h1
+    className="text-center text-success"
+  >
+    User Added
+  </h1>
+</div>
+`;
