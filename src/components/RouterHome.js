@@ -75,21 +75,25 @@ export default class RouterHome extends Component {
                     this.setState({
                         isLoggedIn: true,
                         user: username,
-                        isPassword: true
+                        isPassword: true,
+                        isUser: true
                     })
 
                 } else {
                     this.setState({
                         isLoggedIn: false,
-                        isPassword: false
+                        isPassword: false,
+                        isUser: true
                     })
                 }
             }).catch(err => {
-                console.log(err);
                 this.setState({
                     isLoggedIn: false,
-                    isUser: false
+                    isUser: false,
+                    isPassword: true
+
                 })
+ 
             })
     }
 
