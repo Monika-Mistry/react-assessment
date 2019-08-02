@@ -17,7 +17,8 @@ export default class RouterHome extends Component {
             isAdded: false,
             isLoggedIn: false,
             user: "",
-            success: true
+            isPassword: true,
+            isUser: true
         }
     }
     componentDidMount() {
@@ -74,17 +75,21 @@ export default class RouterHome extends Component {
                     this.setState({
                         isLoggedIn: true,
                         user: username,
-                        success: true
+                        isPassword: true
                     })
 
                 } else {
                     this.setState({
                         isLoggedIn: false,
-                        success: false
+                        isPassword: false
                     })
                 }
             }).catch(err => {
-            console.log(err)
+                console.log(err);
+                this.setState({
+                    isLoggedIn: false,
+                    isUser: false
+                })
             })
     }
 
@@ -96,7 +101,7 @@ export default class RouterHome extends Component {
                 <br></br>
 
                 <Route exact path="/" />
-                <Route path="/login" render={props => <LoginForm success={this.state.success} isLoggedIn={this.state.isLoggedIn} user={this.state.user} loginUser={this.loginUser} />} />
+                <Route path="/login" render={props => <LoginForm isUser={this.state.isUser} isPassword={this.state.isPassword} isLoggedIn={this.state.isLoggedIn} user={this.state.user} loginUser={this.loginUser} />} />
                 <Route path="/register" render={props => <RegisterForm isAdded={this.state.isAdded} errors={this.state.postErrors} addUser={this.addUser} />} />
                 <Route path="/users" render={props => <UserList getAllUser={this.getAllUser} users={this.state.users} />} />
             </Router>

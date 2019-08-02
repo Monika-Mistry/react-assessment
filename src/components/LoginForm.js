@@ -12,7 +12,8 @@ import {
 export default function LoginForm(props) {
     const isLoggedIn = props.isLoggedIn;
     const user = props.user;
-    const success = props.success
+    const isPassword = props.isPassword;
+    const isUser = props.isUser;
 
     return (
         <Form className="container" onSubmit={props.loginUser}>
@@ -25,10 +26,10 @@ export default function LoginForm(props) {
                         name="username"
                         id="username"
                         placeholder="Enter your username"
-                        invalid={!success}
+                        invalid={!isUser}
                         valid={isLoggedIn}
                     />
-                    <FormFeedback invalid>Username or password is incorrect</FormFeedback>
+                    <FormFeedback invalid>Username is incorrect</FormFeedback>
                 </Col>
             </FormGroup>
             <FormGroup row>
@@ -40,10 +41,10 @@ export default function LoginForm(props) {
                         name="password"
                         id="password"
                         placeholder="Enter your password"
-                        invalid={!success}
+                        invalid={!isPassword}
                         valid={isLoggedIn}
                     />
-                    <FormFeedback invalid>Username or password is incorrect</FormFeedback>
+                    <FormFeedback invalid>Password is incorrect</FormFeedback>
                 </Col>
             </FormGroup>
             <div className="text-center">
